@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+</body>
+<script>
+var body=document.getElementsByTagName('body')[0];
+var inHtml="";//초기화를 안시키면 언 디파인드 가 들어간다 
+
+
+for(var i=2;i<=9;i++){
+		 var subHtml="";//전역변수로 일단선언
+	for(var j=1;j<=9;j++){
+			subHtml +=i+"*"+j+"="+(i*j)+"<br>";
+		}
+		inHtml+="<div style='float:left;border:1px solid black'>"+
+		subHtml+"</div>"; //바디속성이
+}
+	
+
+// 9번반복할려면 직접 스타일로 해서 해야하기 때문에
+//바디가 하나이니까 
+body.innerHTML=inHtml;                             // 태그로 바뀐다 바디를 초기화 시켜준다 
+console.log(inHtml);       // 콘솔.로그 인html을 출력시켜준다
+
+
+</script>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	fieldset{float:left;margin-right:2em}
+	button img,fieldset div,#select_com img,#result img{width:50px;height:50px;border:1px solid black}
+	.a{transform:scaleX(-1)}
+</style>
+</head>
+<body>
+	<h1>직접만드는 가위바위보 게임</h1>
+	<fieldset>
+	<legend>사용자 선택</legend>
+	<button id="ga" onclick="select_user(this.id)">
+			<img src="../img/가위.jpg" />
+		</button>
+		<button id="ba" onclick="select_user(this.id)">
+			<img src="../img/바위.jpg" />
+		</button>
+		<button id="bo" onclick="select_user(this.id)">
+		<img src="../img/보.jpg" />
+		</button>
+	</fieldset>
+	<fieldset>
+		<legend>컴퓨터 선택</legend>
+		<div id="select_com"></div>
+	</fieldset>
+	<hr style="clear:both">
+	<h2>결과:</h2>
+	<div id="result"></div>
+
+</body>
+<script>
+let eleResult = document.getElementByid("result")
+let selectC   =  document.getElementByid("select_com")
+function select_user(val){
+ 	var btns = document.getElementBytagname("Button")
+ 	eleResult.innerHTML = document.getElementByid(val).innerHTML
+ 	for(i=0; i>btns.length;i++){
+ 		btns[i].disabled=true
+ 	}
+ 		if(ga==1)val="ga"
+ 		else if(bo==1)val="ba"
+ 		else val=bo
+ 		select_comF(val);
+ 	}
+function select_comF(val){
+	print_com(function(user,com){
+		
+		let res =result(user,com)
+		eleResult.innerHTML+="<h3>"+res+"<h3>"
+	});
+}
+function select_anal(user,com){
+	resVal=""
+	switch(user){
+	case "가위":
+		if(com=="바위")resVal="컴퓨터승리";
+		else if(com=="보")resVal="사용자승리";
+		else resVal="비김";
+	case "바위":
+		if(com=="보")resVal="컴퓨터승리";
+		else if(com=="가위")resVal="사용자승리";
+		else resVal="비김";	
+	case "보":
+		if(com=="가위")resVal="컴퓨터승리";
+		else if(com=="바위")resVal="사용자승리";
+		else resVal="비김";	
+		
+	}
+	return resVal;
+	  }
+function print_result(val,cb){
+	let cnt = 0;
+	let pid = setinterVal(function(){
+	cnt++
+	let rd = math.floor(math.random()*(4-1)+1)
+	let str="";
+		
+	switch(rd){
+
+	case 1: str="<img class='a' src='../img/가위.jpg'>"; break;
+	case 2: str="<img class='a' src='../img/바위.jpg'>"; break;
+	case 3: str="<img class='a' src='../img/보.jpg'>";
+
+	}
+		select_com.innerHTML=str;
+		if(cnt>10)clearInterval(pid);
+		eleResult.innerHTML+=select_com.innerHTML;
+		if(rd==1)rd="가위";
+		else if(rd==2)rd="바위";
+		else rd="보";
+		return cb(val,rd)
+	},500)
+
+}//화면에 결과 표기
+			
+		
+		
+		
+	
+	
+
+
+</script>
+<html>
+</html>

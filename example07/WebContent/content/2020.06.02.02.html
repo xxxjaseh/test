@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var userInput=
+	prompt("원하는 숫자를 입력하세요","짝수홀수 판별 ");
+	console.log(Number(userInput));
+	console.log(typeof userInput);
+	if(!Number (userInput)){
+		
+	
+		alert("숫자만 입력하세요.");//nan undefined false세개 다 같다
+	}else{
+			switch(userInput%2){
+			case 0:alert("짝수를 입력하셨습니다.") ;break;
+			default :alert("홀수를 입력하셨습니다.") ;
+			}
+			
+	}			
+		
+		
+			
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//forEech(cb)
+
+
+		var testArr1=[10,30,40,70,80];
+			var tmpArr = []
+			testArr1.forEach(function(item,index,arr){
+			tmpArr.push(item+this);	//본체 
+					
+		},50);
+		console.log(tmpArr);
+//from(object,mapfunction,thisValue)
+
+
+	var testObj = new String("가나다라마바사")
+	console.log(Array.from(testObj))
+//array/includes(element[,start])배열이 해당element를 포함여부
+  console.log(testArr1.includes(100))
+//array.indexof(item[,start])
+var testArr2=["홍","박","김","정"];
+console.log(testArr2.indexOf("박"))// 1
+//array
+		console.log(testArr2[3])//정
+//list.isArray(값)
+
+
+var testObj3={};
+var testArr3=[];
+console.log(Array.isArray(testObj3))
+console.log(Array.isArray(testArr3))
+//join(seperator)지정된 구분자로 배열의 요소를 문자열로 조인한다 
+var testArr4=["mango","banana","orange"];
+console.log(testArr4.join());
+var tmpStr4= testArr4.join("and");
+console.log(testArr4.join("and"));
+console.log(tmpStr4);
+console.log(tmpStr4.split("and"));
+testArr4.push("mango");
+console.log(testArr4.lastIndexOf("mango"))
+console.log(testArr4.indexOf("mango"))
+//map(function)
+		
+		var testArr5 = ["홍길동","검사랑","박주걱","홍감시","홍글이"];
+		function testFun5(curVal){
+			if(curVal.indexOf("홍")>-1){
+				return curVal+"씨"
+			}else{
+				return curVal+"님";
+			
+			}
+		} 	
+		testArr5.map(testFun5);
+		
+		
+//pop()배열 스택에서 맨뒤의 데이터를 출력한다
+var arr6 =["banana","mango","orange"];
+console.log(arr6.pop());
+console.log(arr6.pop());
+console.log(arr6)
+
+arr6.push("apple","watermelon");
+//array.reducearray.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+//total= initaVlaue ,Ehsms dlwjs 계산 결과값
+var arr7 = [10,20,30,40,50];
+var res7 = arr7.reduce(function(total,curVal){
+	console.log("토탈값"+total)
+	console.log("현재값"+curVal)
+	return (total-curVal)
+	
+})
+console.log(res7);
+
+//초기값을 주면 최초 total은 초기값이  주입된다. 
+	var res8 = arr7.reduce(function(total,curVal){
+			return total+curval;	
+})
+ 	console.log(res8)
+
+//배열의 전체값 합산 
+var res9=arr7.reduce(function(t,c)){
+		return t+c;
+		
+	},1);
+	console.lof(res9)
+//reduceRight()오른쪽부터 계산
+
+
+//중요)배열을 뒤집어요 
+//reverse()배열을 뒤집는다 
+var arr10= [10,20,30,40,50];
+	arr10.reverse();
+	console.log(arr10);
+	
+//즁요)shift배열의 왼쪽으로 데이터를 밀어 넣는다 
+var arr11[10,20,30,40,50];
+console.log(arr11.shift(5))
+//tem1, item2, ..., itemX 	Required. The item(s) to add to the beginning of the array
+			arr.unshift("신규데이터")
+			console.log(arr11)
+
+		
+		
+		
+		
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

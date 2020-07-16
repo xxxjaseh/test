@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+// ice cream function
+
+var result =  buyIcecream(1000);
+console.log(result);
+function buyIcecream(money){
+	var count =10;
+	return "ice cream:"+count+"개";
+}
+
+//국화빵 땅콩빵 붕어빵 기계 
+function bread(모양틀,안꼬,밀가루,물,가스불,시럽){
+	document.write(밀가루+"와"+물+"을섞어 반죽합니다<br>");
+	document.write(모양틀+"틀안에 반죽을 넣습니다.<br>");
+	document.write(안꼬+"를"+모양틀+"틀반죽안에 넣습니다<br>");
+	document.write(가스불+"불을켜고"+시럽+"을 섞어 데웁니다<br>")
+	return 모양틀 +"빵이 완성 되었습니다"	
+}
+ var result =
+bread("붕어","팥 앙금","중력밀가루","초정리광천수","가스렌지","딸기시럽")
+document.write(result);
+document.write("<hr>")
+ var result =
+bread("국화","팥 앙금","중력밀가루","초정리광천수","가스렌지","딸기시럽")
+document.write(result);
+document.write("<hr>")
+ var result =
+bread("땅콩","팥 앙금","중력밀가루","초정리광천수","가스렌지","딸기시럽")
+document.write(result);
+document.write("<hr>")
+</script>
+</body>
+</html>

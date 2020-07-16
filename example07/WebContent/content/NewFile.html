@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+
+var userInput = prompt("출력할 구구단의 단을 입력하세요 (예제 : 3-5)","2-9");
+
+var userArr=[];
+
+var chk1 = userInput.indexOf('-');
+//alert(chk1);
+
+var chk2 = userInput.indexOf(',');//
+//alert(chk2);
+
+if(chk1>=0){
+	// -  일때
+	var tmpArr = userInput.split('-');
+	alert(tmpArr)
+	
+	var k=0;
+	for(var i=tmpArr[0];i<=tmpArr[1];i++){
+		userArr[k]=i;
+		k++;
+	}
+	console.log(userArr)
+}else if(chk2>=0){
+	// , 일때
+	userArr = userInput.split(",");
+}else{
+	// 단일 숫자일때
+	userArr[0]=userInput;
+}
+
+var body=document.getElementsByTagName('body')[0];
+var inHtml = "";
+
+	for(var i=0;i<userArr.length;i++){		
+		var subHtml="";
+			for(var j=1;j<=9;j++){
+				subHtml+=userArr[i]+"*"+ j + "=" + (userArr[i]*j) + "<br>";
+			}				
+			inHtml+=
+				"<div style='text-align:right;float:left;border:1px solid black'>"+
+					subHtml+"</div>";	
+	}
+	console.log(inHtml);
+	body.innerHTM
+	L=inHtml;
+
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var a1 = ['가','나']
+var a2 = ['다','라','마']
+var newArr = a1.concat(a2);
+console.log(newArr);
+
+
+//var entObj = newArr.entries();
+//for(x of entArr)
+	//console.log(x)
+	
+	
+	
+	
+	//every(cb[passval])모든요소를 순회하며 체크한다
+	 //var cb = function (ele,index,arr){return boolean}
+	var test1Arr = [30,50,40,10,20];
+	test1Arr.every(function(cv,ix,arr){console.log(cv);return cv>=this },30);
+	
+	
+	var test2Arr=['사과','밤','포도'];
+	test2Arr.fill('수박',2,3)
+	test2Arr.fill(undefined);
+   console.log(test2Arr)
+//fi*ter(cb,ix,arr)배열을 순회하며 조건에 맞는 값들만 새로운 배열로 리턴한다 
+//thisvalue는 cb콜백함수 내부에서 this키워드로 할당되는 값이닺
+//cb=function
+var testArr3=[30,60,20,10,50,70];
+   
+   var result3Arr = testArr3.filter(function(curVal){return curVal>30})
+   
+   console.log(result3Arr);
+   
+   function filterImpl(arr,cb){//filter 작업받은사람이거
+	for(var i=0; i<arr.length;i++){//cb는 이용한 능력이다
+		var res =cb(arr[i]);
+		if(res){
+			newArr.push(arr[i])
+		}
+	}
+	   cb();
+	
+	   return newArr;
+	
+   }
+   var resImpl=
+	   filterImpl(testArr3,function(curVal){return curVal>30})
+	   console.log(resImpl)
+//find(cb,thisval)해당 배열에서 cb를 만족하는 첫번째 값을 리턴
+   var testArr4=[10,20,40
+	    ,45,12];
+  var resVal =
+	  testArr4.find(function(curVal){return curVal>35});
+  console.log(resVal);
+//findIndex(cb,thisval)해당배열에서 cb를 만족하는 첫번째 값의 인덱스 리턴
+var resVal4= testArr4.findIndex(function(curVal){return curVal>35});
+console.log(resVal4);
+  
+  
+  
+  
+  
+  
+  
+</script>
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

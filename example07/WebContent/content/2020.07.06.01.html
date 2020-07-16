@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	var human ={name:"김상형",age:29};
+	Object.defineProperty(human,'salary',{value:150,writable:false});
+	human.salary =300;
+	console.log(human.salary);
+	console.log(human);
+	console.log(Object);
+	Object.defineproperties(human,
+			{'inOffice':{"2020-10-1",writable:false},
+			'outOffice':{"2020-12-10",writable:false}});
+	
+	
+	//Object.defineproperty(human,'ageage',{
+		//get:function()return this.ageage +"세"},
+		//set:function(val){if(val>0){this.ageage=val}}
+//});	
+	//human.ageage=300;
+	//console.log(human.age);
+	  
+	  var human2 = {a:100,b:200};
+	  Object.seal(human2);
+	  delete human2.a;
+	  console.log(human2.a)
+	 s
+</script>
+</body>
+</html>

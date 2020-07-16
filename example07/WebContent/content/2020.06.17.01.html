@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+var arr1 = [10,20,30];
+var arr2 = arr1;
+arr2[1]=100;
+console.log(arr1[1]);
+var obj1 ={a:100,b:200,c:300};
+var obj2 = obj1;
+obj2.a=500
+console.log(obj2.a);
+new Object();
+function MyCar(){
+	    this.speed=0;
+		this.size=500;
+		this.color;
+		
+		
+	MyCar.prototype.shareVar=10000;	
+	MyCar.prototype.stop=function(){
+		document.write(
+				 
+				)
+	}	
+	
+		this.start=function(){
+			document.write(this.color+"색의"+this.name+"차가 출발합니다.")
+		}
+	   this.stop=function(){
+	    	document.write(this.color+"색의"+this.name+"차가 정차합니다.")
+	    }
+	    this.addSpeed=function(speed){
+	    	this.speed+=speed;document.write(this.color+"색의"+this.name+"차의 속도가"+this.speed+"로 변경 되었습니다."
+	    			);
+	    }
+}
+
+	var car1 = new MyCar();
+	var car2 = new MyCar();
+	var car3= new MyCar();
+	var car4 = new MyCar();
+	var car5 = new MyCar();
+	var car6 = new MyCar();
+	
+	car1.name="형차";car2.name="동생차";car3.name="언니차";car4.name="고모차";car5.name="조카차";
+	car1.color="노랑";car2.color="파랑";car3.color="하양";car4.color="핑크";car5.color="검정";
+	car1.start();car2.start();car3.start();car4.start();car5.start();
+	car1.addSpeed(30);car1.addSpeed(20);car1.addSpeed(30);	
+	car1.addSpeed(10);car1.addSpeed(30);car1.addSpeed(30);
+	car1.addSpeed(70);car1.addSpeed(80);car1.addSpeed(30);
+	car1.addSpeed(20);car1.addSpeed(30);car1.addSpeed(30);
+    car1.stop();car2.stop();car3.stop();car4.stop();car5.stop();
+	delete car1.name;
+	console.log("name" in car1)
+	console.log(MyCar.prototype.shareVar);//10000
+	console.log(car5.shareVar);//10000
+	car5.shareVar=50000;
+	console.log(car5.shareVar);//50000
+	Object.prototype.myshare=5;
+	Object.prototype.testFun = function(){alert("오브젝트함수가 실행됨")}
+	car4.testFun=function(){alert("카4에서만 실행되는 함수입니다")}
+	console.log(car5.myshare);
+	
+	
+	car1.testFun();
+	car4.testFun();
+	
+	
+
+
+
+</script>
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

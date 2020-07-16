@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+var obj = {};
+obj.a = "abc";
+obj["b"]="bcd";
+var c = "c";
+obj[c]="cde";
+console.log(obj)
+var obj1 = new object();
+obj1.a="aaa"
+obj1.a="aaa"
+boj3["c"]="ccc";
+console.log(obj1);
+var obj2 = {a:"aaa",b:"bbb",c:"ccc"}
+
+
+
+var testobj={a:"aaa",b:"bbb",c:"ccc"}
+var txt= "eee";
+var Obj3={"0:a","1:b","2:c"}
+
+obj3[2]
+testObj[txt];
+
+//자바스크립트 객체 구조 
+
+var myObj= {"name:hongildond","age:30"}
+var convertDB[{name:{familyname:"홍",subname:"길동"}},age:30,addr:"광주"},
+	{{name:{familyname:"홍",subname:"길동"}},age:20,addr:"서울"}
+ 	{{name:{familyname:"홍",subname:"길동"}},age:40,addr:"부산"}];
+	JSON.stringify(convertDB);
+ 	
+}
+var XmlData =
+	
+	"<구성원>"+
+		"<구성>"+
+			"<성명><성>홍</성><이름>길동</이름></성명>"+
+			"<나이>30<나이>"+
+			"<주소>"광주"<주소>"+
+			"<구성원>"+
+		"<구성>"+
+				"<성명><성>이</성><이름>순신</이름></성명>"+
+				"<나이>20<나이>"+
+				"<주소>"서울"<주소>"+
+				"<구성원>"+
+		"<구성>"+
+					"<성명><성>강</성><이름>감찬</이름></성명>"+
+					"<나이>40<나이>"+
+					"<주소>"부산"<주소>"+
+		"<구성원>;"
+
+
+console.log(convertDB)
+console.log(xmlData)
+
+for (var i=0;i<convertDB.length,i++)
+{
+	var obj = convertDB[i];
+	
+	var keys = object.keys(obj);
+	
+	for (var j=0; j<keys.length;j++)
+	{
+		var keys_sub = Object.keys(obj[keys[j]]);
+	
+		for(var k=0; k<keys_sub.length;k++)
+		{
+			document.write(key_sub[k]+":"+
+			obj[keys[j]][keys_sub[k]]		)
+		}
+	}
+}
+		
+		for(var i=0 i<convertDB.length,i++)
+		{
+			for(var key in convertDB[i])
+			{
+				for(var key2 in convertDB[i][key])
+				{
+					document.write(key2+";",convertDB[i][key][key2])
+				}	
+				
+			}
+		}
+		
+		
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

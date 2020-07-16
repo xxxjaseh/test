@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+</script>
+
+</head>
+<body>
+	<h1>웹브라우저 히스토리 기능 구현</h1>
+	<label>이동 페이지 주소<input id="webAdder" type="text" placeholder="이동할 웹 주소를 입력"></label>
+	<label>사이트 이름<input id="webName" type="text" placeholder="이동할 웹사이트 이름"></label>
+	<br>
+	<input type="button" value="뒤로 가기" id="preBtn">
+	<input type="button" value="주소로 가기" id="moveBtn">
+	<input type="button" value="앞으로 가기" id="nextBtn">
+	<br>
+	<div id="result"></div>
+</body>
+<script>
+	var webAdder = document.getElementById("webAdder");
+	var webName = document.getElementById("webName");
+	var preBtn = document.getElementById("preBtn");
+	var moveBtn = document.getElementById("moveBtn");
+	var nextBtn = document.getElementById("nextBtn");
+	var result = document.getElementById("result");
+	var prePageStack = [];
+	var nextPageStack = [];
+	var currentPage = "";
+	var sw = false;
+	//사이트 주소, 사이트 이름
+	moveBtn.onclick=function(){
+			//sw없다면 처음에 이동누르면 현재 페이지 이전 페이지 모두 같게됨
+			//그래서 처음은 sw가 false로 이전 페이지에 스택을 안 넣게
+			//그래서 다음부터 sw가 true가 되면 현재페이지를 미리 이전페이지에 넣고
+			//그 후 현재페이지를 바꿔줌
+			if(currentPage.value != "") {			
+				if (sw) {
+					prePageStack.push(currentPage);
+				}
+				currentPage = webAdder.value + "!" + webName.value; 
+				result.innerHTML = "<p>" + webAdder.value + " 주소로 " 
+									+ webName.value +" 사이트에 접속합니다." + "</p>"
+									+ result.innerHTML;
+				sw = true;				
+			
+			}
+	}
+	preBtn.onclick=function(){
+		if (prePageStack.length<=0) {
+			return;
+		}
+		nextPageStack.unshift(currentPage);
+		currentPage = prePageStack.pop();
+		
+		var adder_split = currentPage.split("!");
+		result.innerHTML = "<p>" + adder_split[0] + " 주소로 " 
+		+ adder_split[1] +" 사이트에 접속합니다." + "</p>"
+		+ result.innerHTML;
+		
+	}
+	nextBtn.onclick=function(){
+		if (nextPageStack.length<=0) {
+			return;
+		}
+		prePageStack.push(currentPage);
+		currentPage = nextPageStack.shift();
+		
+		var adder_split = currentPage.split("!");
+		result.innerHTML = "<p>" + adder_split[0] + " 주소로 " 
+		+ adder_split[1] +" 사이트에 접속합니다." + "</p>"
+		+ result.innerHTML;
+		
+	}
+	
+	
+</script>
+</html>

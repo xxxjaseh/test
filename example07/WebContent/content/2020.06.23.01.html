@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>웹 히스토리 구현 </h1>
+<label>>이동 페이지 주소<input id="webarr"  type="text" placeholder="주소를 입력해주세요"></label>
+<label>>이동 페이지 이름<input id="webname"  type="text" placeholder="이름를 입력해주세요"></label><br>
+<input id="moveBtn"  type="button" value="주소로 가기" >
+<input id="preBtn"  type="button" value="뒤로가기" >
+<input id="nextBtn"  type="button" value="앞으로 가기" >
+<div id= "result"> </div>
+<script>
+var webarr = document.getElementById("webarr")
+var webname = document.getElementById("webname")
+var moveBtn= document.getElementById("moveBtn")
+var preBtn = document.getElementById("preBtn")
+var nextBtn = document.getElementById("nextBtn")
+var result = document.getElementById("result")
+var sw =false;
+var prepageStack = [];
+var nextpageStack = [];
+var curpage = "";
+
+	moveBtn.onclick=function(){
+		if(curpage!=""){
+			if(sw){
+				prepageStack.push(curpage)
+				return;
+			}	
+			curpage= webarr.value+"!"+webname.value;
+			result.innerHTMl=webarr.value+"로이동합니다"+"!"+webname.value+"입니다"+
+			result.innerHTMl
+			
+		sw =true;
+		}
+	}		
+			
+		
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

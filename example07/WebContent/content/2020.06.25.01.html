@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+ var testArr6= [50,20,60,30,80]
+ console.log(userSort(testArr6))
+function userSort(tArr){
+	for(var i=0; i<testArr6.length-1; i++){
+		for(var j=i+1; j<testArr6.length; j++){
+			if(tArr[i] > tArr[j]){
+				var tmp;
+				tmp=tArr[i];
+				tArr[i]=tArr[j];
+				tArr[j]=tmp;
+				console.log(testArr6)
+				
+		   }
+		return tArr;
+		}
+	}
+ }		 
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

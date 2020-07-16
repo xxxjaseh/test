@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function PigSave(pid,ppw){
+	this.pid=pid;this.ppw=ppw
+	var totalMoney=0;	
+	this.save=
+	this.gettotalMoney=function(return totalMoney){}//토탈 금액확인
+	this.setsaveMoney=function(money){totalMoney+=money}//저축
+	this.setfetchlMoney=function(money,id,pw){	
+		if(id==pid&&pw==ppw){
+			if(money>totalMoney){
+				alert("잔액이 부족합니다.");
+				return;
+			}
+			
+			
+			this.totalMoney=money
+		}else{
+			alert("사용자인증실패 ");
+		}
+	};//인출	
+}
+		    var psObj1 = new PigSave('철수','12345');
+ 			var psObj2 = new PigSave('영희','54321');
+ 			psObj1.save(5000);
+ 			psObj2.save(10000);
+ 			psObj1.fetch(3000,'철수','12345');
+ 			psObj2.fetch(6000,'영희','54321');
+ 					//psObj2.totalMoney=500;
+ 					//psObj1.totalMoney=1000;
+ 					//psObj1.totalMoney=10000;
+   						console.log(psObj1.totalMoney());
+   						console.log(psObj2.totalMoney());
+						console.log(psObj1.totalMoney);
+   						
+						
+						function objTest(){
+						var a=100;
+						
+								
+						}
+   						var obj 
+   						
+</script>
+</head>
+<body>
+
+</body>
+</html>
